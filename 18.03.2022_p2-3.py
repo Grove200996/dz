@@ -1,9 +1,13 @@
 # 2. Дан список:
 my_list = ['в', '5', 'часов', '17', 'минут', 'температура',
            'воздуха', 'была', '+5', 'градусов']
+
+
 def things(x):
     if x[0] in '+-':
         return x[0]
+
+
 
 i = 0
 while i < len(my_list):
@@ -17,6 +21,15 @@ while i < len(my_list):
         my_list.insert(i + 2, '"')
         i += 2
     i += 1
-new_list = ' '.join(my_list)
-new_list.replace(' ','')
-print(new_list)
+print(' '.join(my_list))
+######################
+string = ''
+for i in my_list:
+    things = '"'
+    if i == things:
+        string += '' + i + ''
+    elif i.isdigit() or i.startswith('+'):
+        string += i
+    else:
+        string += ' ' + i + ' '
+print(string.strip())
