@@ -23,3 +23,12 @@ def translator_adv(num):
 
 
 print(translator_adv('Шесть'))
+
+def translator(num):
+    if num[0].isupper():
+        num = num.lower()
+        return dictionary[num].capitalize()
+    else:
+        return dictionary[num]
+print(translator('Один'))
+print(translator('один'))
