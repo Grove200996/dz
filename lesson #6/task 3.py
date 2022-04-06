@@ -1,4 +1,4 @@
-
+from itertools import zip_longest
 user = []
 hobby = []
 with open('users.txt', 'r', encoding='utf-8') as f:
@@ -9,8 +9,7 @@ with open('hobby.txt', 'r', encoding='utf-8') as f:
         hobby.append(h)
 with open('user_hobby.txt', 'w', encoding='utf-8') as f:
     if len(hobby) > len(user):
-        print('Process finished with exit code 1')
-        f.write('-')
+        exit(1)
     else:
-        for users, hobbys in zip(user, hobby):
+        for users, hobbys in zip_longest(user, hobby):
             f.write(f'{users} : {hobbys}')
